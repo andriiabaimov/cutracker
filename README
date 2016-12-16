@@ -1,0 +1,6 @@
+Tracker for Chinese parcels
+
+You should either set environmental variables or edit config.py:
+* UKRPOSHTA_ID - environmental tracking number
+* POSHTASTAT_ID - Poshta-stat parcel id
+* PHANTOMJS_PATH - path to PhantomJS executable
