@@ -35,11 +35,15 @@ def ukrposhta(driver):
 
 @get_driver(config.POSHTASTAT_URL, config.POSHTASTAT_FAIL)
 def poshta_stat(driver):
+    xpath = "//*[contains(text(), '{}')]/following-sibling::td".format(config.POSHTASTAT_LAST_UPDATE)
+    td = driver.find_element_by_xpath(xpath)
+    at_time = td.text
+    answer = config.POSHTASTAT_NO_IMPORT
     if config.POSHTASTAT_SEARCH_STRING in driver.page_source:
         xpath = "//*[contains(text(), '{}')]/following-sibling::td".format(config.POSHTASTAT_SEARCH_STRING)
         td = driver.find_element_by_xpath(xpath)
-        return td.text
-    return config.POSHTASTAT_NO_IMPORT
+        answer = '{}'.format(config.POSHTASTAT_IMPORT, td.text)
+    return '{}: {}'.format(at_time, answer)
 
 while True:
     print(ukrposhta(), poshta_stat())
