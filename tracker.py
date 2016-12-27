@@ -42,7 +42,7 @@ def poshta_stat(driver):
     if config.POSHTASTAT_SEARCH_STRING in driver.page_source:
         xpath = "//*[contains(text(), '{}')]/following-sibling::td".format(config.POSHTASTAT_SEARCH_STRING)
         td = driver.find_element_by_xpath(xpath)
-        answer = '{}'.format(config.POSHTASTAT_IMPORT, td.text)
+        answer = '{} {}'.format(config.POSHTASTAT_IMPORT, td.text)
     return '{}: {}'.format(at_time, answer)
 
 while True:

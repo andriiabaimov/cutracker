@@ -14,7 +14,7 @@ POSHTASTAT_LAST_UPDATE = 'Останнє оновлення'
 POSHTASTAT_URL = '{}/{}'.format('https://poshta-stat.tk/track/', POSHTASTAT_ID)
 POSHTASTAT_FAIL = 'Poshtastat goes out to smoke, waiting...'
 POSHTASTAT_NO_IMPORT = 'Poshtastat says there is no import'
-POSHTASTAT_IMPORT = 'Poshtastat tracked import on '
+POSHTASTAT_IMPORT = 'Poshtastat tracked import on'
 
 PHANTOMJS_PATH = os.getenv('PHANTOMJS_PATH')
 
